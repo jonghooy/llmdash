@@ -75,7 +75,7 @@ export default function useMessageProcess({ message }: { message?: TMessage | nu
         } else {
           setAbortScroll(false);
         }
-      }, 500)();
+      }, 50)(); // Reduced throttle for smoother updates
     },
     [isSubmittingFamily, setAbortScroll],
   );

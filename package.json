@@ -152,5 +152,10 @@
       "admin/",
       "packages/"
     ]
+  },
+  "dependencies": {
+    "@aws-sdk/client-bedrock-runtime": "^3.876.0",
+    "@smithy/eventstream-codec": "^4.0.5",
+    "@smithy/signature-v4": "^5.1.3"
   }
 }

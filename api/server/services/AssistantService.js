@@ -320,9 +320,13 @@ function createInProgressHandler(openai, thread_id, messages) {
       });
 
       // Create a small buffer before streaming begins
-      await sleep(500);
+      // await sleep(500); // Removed for faster response
 
-      const stream = new TextStream(result.text, { delay: 9 });
+      const stream = new TextStream(result.text, { 
+        delay: 0,
+        minChunkSize: 50,
+        maxChunkSize: 200 
+      });
       await stream.processTextStream(onProgress);
     }
   }
